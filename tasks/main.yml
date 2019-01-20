@@ -1,0 +1,44 @@
+---
+# tasks file for svendewindt.msomsagent
+
+- name: Check whether OMS agent is already installed
+  stat:
+    path: "{{ oms_agent_path }}"
+  register: oms_agent_installed
+
+- name: Download OMS agent
+  get_url: 
+    url: "{{ url_omsagent }}"
+    dest: /tmp/
+    mode: 0755
+  when: oms_agent_installed.stat.exists == False
+
+- name: Install OMS agent
+  shell: "/tmp/onboard_agent.sh -w {{ workspace_id }} -s {{ workspace_key }}"
+  when: oms_agent_installed.stat.exists == False
+
+- name: Install deamon
+  shell: "/opt/microsoft/omsagent/bin/service_control restart {{ workspace_id }}"
+  when: oms_agent_installed.stat.exists == False
+
+- name: Remove OMS agent installer
+  file: path=/tmp/onboard_agent.sh state=absent
+
+- name: Check wheter Dependency agent is already installed
+  stat:
+    path: "{{ dependency_agent_path }}"
+  register: dependency_agent_installed
+
+- name: Download dependency agent
+  get_url:
+    url:  "{{ url_dependencyagent }}"
+    dest: /tmp/InstallDependencyAgent-Linux64.bin
+    mode: 0755
+  when: dependency_agent_installed.stat.exists == False
+
+- name: Install dependency agent
+  shell: "/tmp/InstallDependencyAgent-Linux64.bin -s"
+  when: dependency_agent_installed.stat.exists == False
+
+- name: Remove Dependency agent installer
+  file: path=/tmp/InstallDependencyAgent-Linux64.bin state=absent
