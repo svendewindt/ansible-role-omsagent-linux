@@ -7,7 +7,7 @@
   register: oms_agent_installed
 
 - name: Download OMS agent
-  get_url: 
+  get_url:
     url: "{{ url_omsagent }}"
     dest: /tmp/
     mode: 0755

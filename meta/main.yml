@@ -1,13 +1,13 @@
 ---
 galaxy_info:
   author: Sven de Windt
-  description: Installs the Microsoft monitoring agent, more info on https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/OMS-Agent-for-Linux.md
+  description: Installs the Microsoft monitoring agent
   license: BSD
   min_ansible_version: 2.4
   platforms:
     - name: EL
       versions:
         - 7
-  galaxy_tags: 
-    - Microsoft OMS
+  galaxy_tags:
+    - microsoft_oms
 dependencies: []
