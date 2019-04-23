@@ -6,3 +6,4 @@ oms_agent_path: '/opt/microsoft/omsagent/bin/omsadmin.sh'
 
 url_dependencyagent: 'https://aka.ms/dependencyagentlinux'
 dependency_agent_path: '/opt/microsoft/dependency-agent/bin/microsoft-dependency-agent'
+purge_oms_config: False

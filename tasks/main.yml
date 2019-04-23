@@ -1,6 +1,5 @@
 ---
 # tasks file for svendewindt.msomsagent
-
 - name: Check whether OMS agent is already installed
   stat:
     path: "{{ oms_agent_path }}"
@@ -11,15 +10,19 @@
     url: "{{ url_omsagent }}"
     dest: /tmp/
     mode: 0755
-  when: oms_agent_installed.stat.exists == False
+  when: oms_agent_installed.stat.exists == False or purge_oms_config == True
+
+- name: Purge any existing configuration for the OMS agent
+  shell: "/tmp/onboard_agent.sh --purge"
+  when: purge_oms_config == True
 
 - name: Install OMS agent
   shell: "/tmp/onboard_agent.sh -w {{ workspace_id }} -s {{ workspace_key }}"
-  when: oms_agent_installed.stat.exists == False
+  when: oms_agent_installed.stat.exists == False or purge_oms_config == True
 
 - name: Install deamon
   shell: "/opt/microsoft/omsagent/bin/service_control restart {{ workspace_id }}"
-  when: oms_agent_installed.stat.exists == False
+  when: oms_agent_installed.stat.exists == False or purge_oms_config == True
 
 - name: Remove OMS agent installer
   file: path=/tmp/onboard_agent.sh state=absent
