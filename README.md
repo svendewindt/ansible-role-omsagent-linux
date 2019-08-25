@@ -12,11 +12,11 @@ To make use of the agents, you need a configured OMS workspace. You need a `work
 ## Role Variables
 
 
-| Variable        | Default           | Comments (type)             |
-| ---             | ---               | ---                         |
-| `workspace_id`  | -                 | Required. The workspace ID  |
-| `workspace_key` | -                 | Required. The workspace Key |
-| `purge_oms_config` | False                 | Optional. Clear out any existing OMS agent config and re-install it |
+| Variable            | Default           | Comments (type)             |
+| ---                 | ---               | ---                         |
+| `workspace_id`      | -                 | Required. The workspace ID  |
+| `workspace_key`     | -                 | Required. The workspace Key |
+| `purge_oms_config`  | False             | Optional. Clear out any existing OMS agent config and re-install it |
 
 ## Dependencies
 
@@ -24,9 +24,10 @@ No specific dependencies.
 
 ## Example Playbook
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+An example on how to use this role
 
 ```json
+---
 - hosts: all
   roles:
     - svendewindt.omsagent
@@ -41,4 +42,5 @@ Including an example of how to use your role (for instance, with variables passe
 
 ## Contributors
 
-- [Sven de Windt](https://github.com/svendewindt)
+* [Sven de Windt](https://github.com/svendewindt)
+* [DaveB93](https://github.com/DaveB93)
