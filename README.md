@@ -16,6 +16,7 @@ To make use of the agents, you need a configured OMS workspace. You need a `work
 | ---             | ---               | ---                         |
 | `workspace_id`  | -                 | Required. The workspace ID  |
 | `workspace_key` | -                 | Required. The workspace Key |
+| `purge_oms_config` | False                 | Optional. Clear out any existing OMS agent config and re-install it |
 
 ## Dependencies
 
