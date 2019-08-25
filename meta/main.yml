@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: omsagent
   author: Sven de Windt
   description: Installs the Microsoft monitoring agent
   license: BSD
