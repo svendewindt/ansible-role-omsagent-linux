@@ -10,11 +10,9 @@ galaxy_info:
   - name: EL
     versions::
     - 7
-  categories:
+  galaxy_tags:
   - microsoft
   - cloud
   - oms
   - monitoring
-  galaxy_tags:
-  - microsoft_oms
 dependencies: []
