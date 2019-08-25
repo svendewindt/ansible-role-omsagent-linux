@@ -28,7 +28,7 @@ Including an example of how to use your role (for instance, with variables passe
 ```json
 - hosts: all
   roles:
-    - svendewindt.ansible_role_omsagent
+    - svendewindt.omsagent
   vars:
     - workspace_id: '260adb3c-007d-4704-a645-c8f2def53718'
     - workspace_key: '1111254hBqVldHplArZCuBlWoy6sJtJP8XSaLPHKNQYdVtrhOuwG/w0Cuc+F9HbPLEj6AvPVUKt6i/uXWAnooQ=='
