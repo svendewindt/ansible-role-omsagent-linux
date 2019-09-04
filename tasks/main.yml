@@ -1,5 +1,5 @@
 ---
-# tasks file for omsagent.linux
+# tasks file for omsagentlinux
 - name: Check whether OMS agent is already installed
   stat:
     path: "{{ oms_agent_path }}"
