@@ -37,11 +37,17 @@
     url:  "{{ url_dependencyagent }}"
     dest: /tmp/InstallDependencyAgent-Linux64.bin
     mode: 0755
-  when: not dependency_agent_installed.stat.exists
+  when: not dependency_agent_installed.stat.exists and install_dependencyagent
 
 - name: Install dependency agent
   shell: "/tmp/InstallDependencyAgent-Linux64.bin -s"
-  when: not dependency_agent_installed.stat.exists
+  when: not dependency_agent_installed.stat.exists and install_dependencyagent
+
+- name: Remove dependency agent
+  yum:
+    name: dependency-agent
+    state: absent
+  when: dependency_agent_installed.stat.exists and not install_dependencyagent
 
 - name: Remove Dependency agent installer
   file: path=/tmp/InstallDependencyAgent-Linux64.bin state=absent

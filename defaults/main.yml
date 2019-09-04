@@ -3,7 +3,8 @@
 
 url_omsagent: 'https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh'
 oms_agent_path: '/opt/microsoft/omsagent/bin/omsadmin.sh'
+purge_oms_config: False
 
+install_dependencyagent: False
 url_dependencyagent: 'https://aka.ms/dependencyagentlinux'
 dependency_agent_path: '/opt/microsoft/dependency-agent/bin/microsoft-dependency-agent'
-purge_oms_config: False
