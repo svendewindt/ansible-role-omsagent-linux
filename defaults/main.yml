@@ -1,5 +1,5 @@
 ---
-# defaults file for svendewindt.msomsagent
+# defaults file for omsagent.linux
 
 url_omsagent: 'https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh'
 oms_agent_path: '/opt/microsoft/omsagent/bin/omsadmin.sh'
