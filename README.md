@@ -30,7 +30,7 @@ An example on how to use this role
 ---
 - hosts: all
   roles:
-    - svendewindt.omsagent
+    - svendewindt.omsagent-linux
   vars:
     - workspace_id: '260adb3c-007d-4704-a645-c8f2def53718'
     - workspace_key: '1111254hBqVldHplArZCuBlWoy6sJtJP8XSaLPHKNQYdVtrhOuwG/w0Cuc+F9HbPLEj6AvPVUKt6i/uXWAnooQ=='

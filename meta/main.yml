@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: omsagent
+  role_name: omsagent-linux
   author: Sven de Windt
   company: RunIt
   description: Installs the Microsoft monitoring agent
