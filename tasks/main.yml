@@ -13,15 +13,15 @@
   when: not oms_agent_installed.stat.exists or purge_oms_config
 
 - name: Purge any existing configuration for the OMS agent
-  shell: "/tmp/onboard_agent.sh --purge"
+  command: "/tmp/onboard_agent.sh --purge"
   when: purge_oms_config
 
 - name: Install OMS agent
-  shell: "/tmp/onboard_agent.sh -w {{ workspace_id }} -s {{ workspace_key }}"
+  command: "/tmp/onboard_agent.sh -w {{ workspace_id }} -s {{ workspace_key }}"
   when: not oms_agent_installed.stat.exists or purge_oms_config
 
 - name: Install deamon
-  shell: "/opt/microsoft/omsagent/bin/service_control restart {{ workspace_id }}"
+  command: "/opt/microsoft/omsagent/bin/service_control restart {{ workspace_id }}"
   when: not oms_agent_installed.stat.exists or purge_oms_config
 
 - name: Remove OMS agent installer
@@ -40,7 +40,7 @@
   when: not dependency_agent_installed.stat.exists and install_dependencyagent
 
 - name: Install dependency agent
-  shell: "/tmp/InstallDependencyAgent-Linux64.bin -s"
+  command: "/tmp/InstallDependencyAgent-Linux64.bin -s"
   when: not dependency_agent_installed.stat.exists and install_dependencyagent
 
 - name: Remove dependency agent
